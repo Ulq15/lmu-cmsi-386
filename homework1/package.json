@@ -1,0 +1,19 @@
+{
+  "name": "homework1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require esm src/__tests__/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ulq1517/lmu-cmsi-386.git"
+  },
+  "author": "Hassan Hage Hassan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ulq1517/lmu-cmsi-386/issues"
+  },
+  "homepage": "https://github.com/Ulq1517/lmu-cmsi-386#readme"
+}
