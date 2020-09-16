@@ -1,3 +1,5 @@
+const { get } = require('http');
+
 function change(cents){
 	try{
 		if(cents<0) throw RangeError("ammount cannot be negatve");
@@ -129,4 +131,26 @@ function makeCryptoFunctions(key, algorithm, iVector){
 	};
 	return [e,d];
 }
+
+function topTenScorers(teams){
+	let result=[];
+	for(let [team, playerList] of Object.entries(teams)){
+		playerList=playerList.flatMap(player => {return player[1]>=15 ? [[...player, team]] : []});
+		for(player of playerList){
+			let map = new Map();
+			map.set('name', player[0]);
+			map.set('ppg', player[2]/player[1]);
+			map.set('team', player[3]);
+			result.push(map);
+		}
+	}
+	result.sort((a,b)=> b.get('ppg')-a.get('ppg'));
+	result=result.slice(0,10);
+	let arr=[]
+	for(player of result){
+		arr.push(Object.fromEntries(player));
+	}
+	return arr;
+}
+
 
