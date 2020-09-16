@@ -1,8 +1,8 @@
 {
   "name": "homework1",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "module": "main.js",
   "scripts": {
     "test": "mocha --require esm src/__tests__/**/*.js"
   },
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Ulq1517/lmu-cmsi-386/issues"
   },
-  "homepage": "https://github.com/Ulq1517/lmu-cmsi-386#readme"
+  "homepage": "https://github.com/Ulq1517/lmu-cmsi-386#readme",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "node-fetch": "^2.6.1"
+  }
 }
