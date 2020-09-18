@@ -153,4 +153,6 @@ function topTenScorers(teams){
 	return arr;
 }
 
+function multiply(x, y){
 
+}
