@@ -1,7 +1,11 @@
 import random
 import math
+from cryptography.fernet import Fernet
+import requests
 
 def change(cents):
+    if cents<0:
+        raise ValueError('amount cannot be negative')
     quarters = int(cents/25)
     cents=cents - (quarters*25)
     dimes = int(cents/10)
@@ -50,6 +54,63 @@ def powers(base, limit):
             yield result
         power=power+1
 
-def say(x):
-    return lambda y=None: x if y is None else say(x+' '+y)
+def say(*args):
+    if args:
+        res = args[0]
+        def recursor(*a):
+            nonlocal res
+            if a:
+                res = res+' '+a[0]
+                return recursor
+            else:
+                return res
+        return recursor
+    else:
+        return ''
 
+def interleave(list1, *args):
+    finalList=list1.copy()
+    i=1
+    for item in args:
+        if i<len(finalList):
+            finalList.insert(i,item)
+        else:
+            finalList.append(item)
+        i+=2
+    return finalList
+
+def make_crypto_functions(key):
+    cipher_obj=Fernet(key)
+    def encrypt(msg):return cipher_obj.encrypt(msg)
+    def decrypt(encrypted):return cipher_obj.decrypt(encrypted)
+    return (encrypt, decrypt)
+
+def top_ten_scorers(teams):
+    players_Over_15_Games=[]
+    for team in teams.keys():
+        for player in teams.get(team):
+            teamName=team
+            name=player[0]
+            games=player[1]
+            score=player[2]
+            if games>=15:
+                ppg=score/games
+                players_Over_15_Games.append({'name': name, 'ppg': ppg, 'team': teamName})
+    results = sorted(players_Over_15_Games, key=lambda x: x.get('ppg'), reverse=True)
+    results=results[0:10]
+    return results
+
+def studio_ghibli_characters(**kwargs):
+    if len(kwargs)!=2 or not ('hair_color' in kwargs and 'gender' in kwargs):
+        return "Error. Need only hair_color and gender as parameters"
+    else:
+        dic= requests.get('https://ghibliapi.herokuapp.com/people/').json()
+        gender=kwargs['gender']
+        hair=kwargs['hair_color']
+        results=[]
+        for person in dic:
+            if person.get('gender')==gender and person.get('hair_color')==hair:
+                results.append({'name': person.get('name'), 'gender': person.get('gender'), 'age': person.get('age'), 'eye_color': person.get('eye_color'), 'hair_color': person.get('hair_color')})
+
+        return(results)
+    
