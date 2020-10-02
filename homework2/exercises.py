@@ -36,14 +36,16 @@ class Cylinder:
         for key, val in kwargs.items():
             if key=='radius' or key=='height':
                 setattr(self, key, val)
-        vol= math.pi*self.radius*self.radius*self.height
-        self.volume = vol
-        surface = (2*math.pi*self.radius*self.height)+(2*math.pi*self.radius*self.radius)
-        self.surface_area=surface
+        self.calc()
     def widen(self, scale):
         self.radius=scale*self.radius
+        self.calc()
     def stretch(self, scale):
         self.height=scale*self.height
+        self.calc()
+    def calc(self):
+        self.volume= math.pi*self.height*self.radius**2
+        self.surface_area = (2*self.radius*self.height + 2*self.radius**2)*math.pi
 
 def powers(base, limit):
     power = 0
