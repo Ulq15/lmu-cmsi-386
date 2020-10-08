@@ -25,8 +25,8 @@ def stretched(string):
     return stretchedStr
 
 def scramble(string):
-    sr = ''.join(random.sample(string, len(string)))
-    return sr
+    str = ''.join(random.sample(string, len(string)))
+    return str
 
 
 class Cylinder:
@@ -45,7 +45,7 @@ class Cylinder:
         self.calc()
     def calc(self):
         self.volume= math.pi*self.height*self.radius**2
-        self.surface_area = (2*self.radius*self.height + 2*self.radius**2)*math.pi
+        self.surface_area = 2*(self.radius*self.height + self.radius**2)*math.pi
 
 def powers(base, limit):
     power = 0
@@ -83,8 +83,10 @@ def interleave(list1, *args):
 
 def make_crypto_functions(key):
     cipher_obj=Fernet(key)
-    def encrypt(msg):return cipher_obj.encrypt(msg)
-    def decrypt(encrypted):return cipher_obj.decrypt(encrypted)
+    def encrypt(msg):
+        return cipher_obj.encrypt(msg)
+    def decrypt(encrypted):
+        return cipher_obj.decrypt(encrypted)
     return (encrypt, decrypt)
 
 def top_ten_scorers(teams):
