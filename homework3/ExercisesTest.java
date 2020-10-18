@@ -167,6 +167,6 @@ public class ExercisesTest /*extends TestSuite*/ {
     }*/
 	
 	public static void main(String[] args) {
-		//System.out.println(Exercises.stretched(" tas \t\n  \t q"));
+				
 	}
 }

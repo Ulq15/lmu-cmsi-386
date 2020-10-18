@@ -1,6 +1,13 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.regex.MatchResult;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Exercises{
 	
@@ -20,15 +27,32 @@ public class Exercises{
 	
 	public static String stretched(String toBeStretched) {
 		toBeStretched= toBeStretched.replaceAll("\\s+", "");
+		List<String> characters = Pattern.compile("\\P{M}\\p{M}*+").matcher(toBeStretched).results()
+				.map(MatchResult::group).collect(Collectors.toList());
 		String stretched = "";
-		for(int i=0; i<toBeStretched.length(); i++) {
+		for(int i=0; i<characters.size(); i++) {
 			for(int j=0; j<i+1; j++) {
-				stretched+=toBeStretched.charAt(i);
+				stretched+=characters.get(i);
 			}
 		}
 		return stretched;
 	}
 	
+	public static <T> Set<T> mapThenUnique(List<T> items, Function<T,T> lambda) {
+		return items.stream().map(lambda).collect(Collectors.toSet());
+	}
+	
+	public static void powers(int base, int limit, Consumer<Integer> lambda) {
+		int power = 0;
+		while(Math.pow(base, power)<=limit) {
+			lambda.accept((int) Math.pow(base, power));
+			power++;
+		}
+	}
+	
+	public static Stream<Integer> powers(int base){
+		return Stream.iterate(1, i -> i*base);
+	}
 	
 	
 	
