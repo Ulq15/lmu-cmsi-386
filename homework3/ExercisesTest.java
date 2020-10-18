@@ -5,8 +5,8 @@ import java.util.Set;
 import java.util.Map;
 import java.util.Optional;
 
-public class ExercisesTest extends TestSuite {
-    public static void main(String[] args) {
+public class ExercisesTest /*extends TestSuite*/ {
+    /*public static void main(String[] args) {
         TestSuite.run(new ExercisesTest());
     }
 
@@ -164,5 +164,9 @@ public class ExercisesTest extends TestSuite {
                 expectEqual(Exercises.topTenScorers(wnbaInput()), wnbaExpected);
             })
         };
-    }
+    }*/
+	
+	public static void main(String[] args) {
+		//System.out.println(Exercises.stretched(" tas \t\n  \t q"));
+	}
 }

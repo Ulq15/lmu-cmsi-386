@@ -19,9 +19,17 @@ public class Exercises{
 	}
 	
 	public static String stretched(String toBeStretched) {
-		
-		
+		toBeStretched= toBeStretched.replaceAll("\\s+", "");
+		String stretched = "";
+		for(int i=0; i<toBeStretched.length(); i++) {
+			for(int j=0; j<i+1; j++) {
+				stretched+=toBeStretched.charAt(i);
+			}
+		}
+		return stretched;
 	}
+	
+	
 	
 	
 }
