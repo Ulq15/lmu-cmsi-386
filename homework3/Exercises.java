@@ -9,18 +9,18 @@ public class Exercises{
 			throw new IllegalArgumentException("Amount cannot be negative");
 		}
 		List<Integer> list = new ArrayList<Integer>();
-		Integer quarters = cents/25;
-		cents=cents-quarters*25;
-		Integer dimes = cents/10;
-		cents=cents-dimes*10;
-		Integer nickles = cents/5;
-		cents=cents-nickles*5;
-		list.add(quarters);
-		list.add(dimes);
-		list.add(nickles);
-		list.add(cents);
-		List<Integer> immutable = Collections.unmodifiableList(list);
-		return immutable;
+		int[] coins= {25,10,5,1};
+		for(int i=0; i<4; i++) {
+			int currentCoin=cents/coins[i];
+			cents-=currentCoin*coins[i];
+			list.add(currentCoin);
+		}
+		return Collections.unmodifiableList(list);
+	}
+	
+	public static String stretched(String toBeStretched) {
+		
+		
 	}
 	
 	
