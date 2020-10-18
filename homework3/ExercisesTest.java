@@ -167,6 +167,6 @@ public class ExercisesTest /*extends TestSuite*/ {
     }*/
 	
 	public static void main(String[] args) {
-				
+		
 	}
 }

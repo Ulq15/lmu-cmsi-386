@@ -54,6 +54,31 @@ public class Exercises{
 		return Stream.iterate(1, i -> i*base);
 	}
 	
+	public static MyString say(String... word) {
+		if(word.length>0) {
+			MyString myStr = new MyString();
+			myStr.and(word[0]);
+			return myStr;
+		}
+		else {
+			return new MyString();
+		}	
+	}
 	
 	
+}
+
+class MyString{
+	String totalString="";
+	
+	public MyString and(String str) {
+		totalString+=" "+str;
+		return this;
+	}
+	public String ok() {
+		return totalString.substring(1);
+	}
+	public String toString() {
+		return totalString;
+	}
 }
