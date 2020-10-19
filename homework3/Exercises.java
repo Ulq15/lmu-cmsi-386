@@ -1,13 +1,15 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.stream.IntStream;
 
 public class Exercises{
 	
@@ -38,7 +40,7 @@ public class Exercises{
 		return stretched;
 	}
 	
-	public static <T> Set<T> mapThenUnique(List<T> items, Function<T,T> lambda) {
+	public static <T,U> Set<U> mapThenUnique(List<T> items, Function<T,U> lambda) {
 		return items.stream().map(lambda).collect(Collectors.toSet());
 	}
 	
@@ -50,35 +52,54 @@ public class Exercises{
 		}
 	}
 	
-	public static Stream<Integer> powers(int base){
-		return Stream.iterate(1, i -> i*base);
+	public static IntStream powers(int base){
+		return IntStream.iterate(1, i -> i*base);
 	}
 	
-	public static MyString say(String... word) {
-		if(word.length>0) {
-			MyString myStr = new MyString();
-			myStr.and(word[0]);
-			return myStr;
+	static class MyString{
+		String totalString="";
+		public MyString and(String str) {
+			totalString+=" "+str;
+			return this;
 		}
-		else {
-			return new MyString();
-		}	
+		public String ok() {
+			return totalString.substring(1);
+		}
+		public String toString() {
+			return totalString.substring(1);
+		}
 	}
 	
+	public static String say() {
+		return "";
+	}
 	
+	public static MyString say(String word) {
+		MyString myStr = new MyString();
+		myStr.and(word);
+		return myStr;
+	}
+	
+	public static <T> T twice(Function<T,T> function, T variable) {
+		return function.andThen(function).apply(variable);
+	}
+	
+	public static Optional<String> firstLongStringUppercased(int length, List<String> strings){
+		try {
+			String firstLong = strings.stream().filter(s->s.length()>length).findFirst().get();
+			if(!firstLong.equalsIgnoreCase("empty")) {
+				return Optional.of(firstLong.toUpperCase());
+			}
+			else {
+				return Optional.empty();
+			}
+		} catch(Exception e) {
+			return Optional.empty();
+		}
+	}
+	
+	public static List<String> topTenScorers(Map<String, List<String>> teamStatistics){
+		return null;
+	}
 }
 
-class MyString{
-	String totalString="";
-	
-	public MyString and(String str) {
-		totalString+=" "+str;
-		return this;
-	}
-	public String ok() {
-		return totalString.substring(1);
-	}
-	public String toString() {
-		return totalString;
-	}
-}
