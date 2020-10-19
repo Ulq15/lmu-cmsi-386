@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Consumer;
@@ -10,6 +11,7 @@ import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Exercises{
 	
@@ -99,6 +101,25 @@ public class Exercises{
 	}
 	
 	public static List<String> topTenScorers(Map<String, List<String>> teamStatistics){
+	/*	System.out.println(teamStatistics.entrySet().toString());
+		List<List<String>> allTeams = new ArrayList<List<String>>();
+		for(String team : teamStatistics.keySet()) {
+			List<String> players = teamStatistics.get(team);
+			List<String> newPlayers=new ArrayList<String>();
+			for(String player : players) {
+				String[] p=player.split(",");
+				if(Integer.parseInt(p[1])>=15) {
+					newPlayers.add(player+","+team);
+				}
+			}
+			allTeams.add(newPlayers);
+		}
+		System.out.println(allTeams);
+		
+		teamStatistics.keySet().stream().flatMap((String team)
+				->{List<String> players=teamStatistics.get(team);return players.stream().map((String player) 
+				-> player+","+team);}).collect(Collectors.toList());
+	*/
 		return null;
 	}
 }
