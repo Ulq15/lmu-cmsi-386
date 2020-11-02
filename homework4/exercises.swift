@@ -103,8 +103,5 @@ func twice<T>(_ f: (T)->T, appliedTo x: T)-> T {
 
 //****#8****
 func uppercasedFirst(of array: [String], longerThan minLength: Int) -> String?{
-  /* how to solve
-  array.first(where: {length>=minLength})?.toUpperCase
-  */
-  return nil
+  return array.first(where: {$0.length>minLength})?.uppercased()
 }
