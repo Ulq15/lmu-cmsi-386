@@ -63,6 +63,4 @@ assert(uppercasedFirst(of: ["ab", "abcf"], longerThan: 1) == Optional.some("AB")
 print("All tests passed")
 
 */
-print([2, 9, -9, 3].mapThenUnique { Int($0) * $0 } == Set([4, 9, 81]))
-print(["abc", "Hi", "AbC"].mapThenUnique { $0.lowercased() } == Set(["hi", "abc"]))
-print(["33", "21", "33"].mapThenUnique { Int($0) } == Set([21, 33]))
+print(say("🐤🦇").and("$🦊👏🏽").and("!").phrase == "🐤🦇 $🦊👏🏽 !")
