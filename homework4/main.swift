@@ -33,7 +33,7 @@ assert(scratch == [1, 2, 4, 8, 16, 32])
 scratch.removeAll()
 powers(of: -3, through: 300) { scratch.append($0) }
 assert(scratch == [1, -3, 9, -27, 81, -243])
-/*
+
 let h: Animal = Horse(name: "CJ")
 assert(h.speak() == "CJ says neigh")
 let c: Animal = Cow(name: "Bessie")
@@ -46,7 +46,7 @@ struct Rat: Animal {
     let sound = "squeak"
 }
 assert(Rat(name:"Oreo").speak() == "Oreo says squeak")
-*/
+
 assert(say("A").phrase == "A")
 assert(say("A").and("B").phrase == "A B")
 assert(say("🐤🦇").and("$🦊👏🏽").and("!").phrase == "🐤🦇 $🦊👏🏽 !")
@@ -55,7 +55,7 @@ assert(twice({$0 * 2}, appliedTo: 5.0) == 20.0)
 assert(twice({s in s + "ee"}, appliedTo: "b") == "beeee")
 
 assert(uppercasedFirst(of: [], longerThan: 5) == nil)
-//assert(uppercasedFirst(of: ["🎃"], longerThan: 1) == nil)
+assert(uppercasedFirst(of: ["🎃"], longerThan: 1) == nil)
 assert(uppercasedFirst(of: ["a", "bcdef"], longerThan: 5) == nil)
 assert(uppercasedFirst(of: ["a", "abcdef", "g"], longerThan: 5) == Optional.some("ABCDEF"))
 assert(uppercasedFirst(of: ["ab", "abcf"], longerThan: 1) == Optional.some("AB"))

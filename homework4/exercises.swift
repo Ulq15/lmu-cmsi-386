@@ -18,23 +18,7 @@ func change(_ cents: Int)->Result<(Int, Int, Int, Int), NegativeAmountError>{
   }
   return Result.success((arr[0],arr[1],arr[2],arr[3]))
 }
-//Did this before watching Homework 4 Helper video
-/* 
-extension String{
-  var stretched: String{
-    let trimmed: String = self.replacingOccurrences(of: "\n|\t| ", with: "", options: .regularExpression)
-    var stretchedStr: String = ""
-    var index: Int=1
-    for char in trimmed{
-      for _ in 1...index{
-        stretchedStr.append(char)
-      }
-      index+=1
-    }
-    return stretchedStr
-  }
-}
-*/
+
 //****#2****
 extension String{
   var stretched: String{
@@ -58,13 +42,6 @@ extension String{
 //****#3****
 extension Array where Element: Hashable{
   func mapThenUnique<T>(fn:(Element)->T)->Set<T>{
-    //Did this before watching Homework 4 Helper video
-    /*var newArr:[T]=[]
-    for item in self{
-      newArr.append(fn(item as Element))
-    }
-    return Set(newArr)
-    */
     return Set(self.map{fn($0)})
   }
 }
@@ -83,16 +60,36 @@ func powers(of base: Int, through limit: Int, closure: (Int) -> ()){
 }
 
 //****#5****
-
+protocol Animal {
+  var name: String{get}
+  var sound: String{get}
+}
+extension Animal {
+  func speak() -> String{
+    return name+" says "+sound
+  }
+}
+struct Horse: Animal {
+  let name: String
+  let sound = "neigh"
+}
+struct Cow: Animal {
+  let name: String
+  let sound = "moooo"
+}
+struct Sheep: Animal {
+  let name: String
+  let sound = "baaaa"
+}
 
 //****#6****
-struct Sayer{
+struct Sayer {
   var phrase: String 
-  func and(_ word: String)->Sayer{
+  func and(_ word: String)->Sayer {
     return Sayer(phrase: phrase+" \(word)")
   }
 }
-func say(_ word: String)->Sayer{
+func say(_ word: String)->Sayer {
   return Sayer(phrase:word)
 }
 
@@ -102,6 +99,6 @@ func twice<T>(_ f: (T)->T, appliedTo x: T)-> T {
 }
 
 //****#8****
-func uppercasedFirst(of array: [String], longerThan minLength: Int) -> String?{
-  return array.first(where: {$0.length>minLength})?.uppercased()
+func uppercasedFirst(of array: [String], longerThan minLength: Int) -> String? {
+  return array.first(where: {$0.count>minLength})?.uppercased()
 }
