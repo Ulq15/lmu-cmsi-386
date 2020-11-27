@@ -4,6 +4,7 @@ cache/
 *.sln
 *.vcxproj
 *.vcxproj.filters
+homework5/homework5/exercises.cpp
 
 ##Pre-compiled gitignore from link below
 
@@ -369,4 +370,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-homework5/homework5/exercises.cpp
