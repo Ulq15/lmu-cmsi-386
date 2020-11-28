@@ -4,13 +4,16 @@ using namespace std;
 
 struct say: string {
 public:
-	string operator()(string someString) {
-		sentence = sentence.append(" ").append(someString);
-		return say(sentence);
+	say() : string("") { }
+	say(string someString) : string(someString) {
+		sentence = someString;
 	}
-	string operator()() {
+	auto operator()(string someString) {
+		return say(sentence+" "+someString);
+	}
+	auto operator()() {
 		return sentence;
 	}
 private:
-	string sentence="";
+	string sentence;
 };
