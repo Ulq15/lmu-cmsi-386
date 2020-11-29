@@ -29,7 +29,7 @@ void test_sorted_counts() {
         assert(sorted_word_counts(words) == counts);
     }
 }
-/*
+
 void test_empty_queue_has_zero_size() {
     Queue<string> q;
     assert(q.get_size() == 0);
@@ -95,16 +95,14 @@ void test_dequeue_from_empty_queue_throws_underflow_error() {
         assert(false);
     }
 }
-*/
+
 int main() {
     test_say();
     test_sorted_counts();
-    /*test_empty_queue_has_zero_size();
+    test_empty_queue_has_zero_size();
     test_some_insertions_and_deletions();
     test_dequeue_from_empty_queue_throws_underflow_error();
-    test_no_copies();
-    test_moves();
-    */
+    //test_no_copies();
+    //test_moves();
     cout << "All tests passed\n";
-    
 }
