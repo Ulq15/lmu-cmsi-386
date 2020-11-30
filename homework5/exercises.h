@@ -42,12 +42,11 @@ private:
 		Node* next;
 		Node(T data, Node* next) :data(data), next(next) {}
 	};
-
 	Node* head;
 	Node* tail;
 	int cur_size = 0;
 public:
-	Queue() : head(nullptr), tail(nullptr) {}
+	Queue() : head(nullptr), tail(head) {}
 
 	~Queue() {
 		while (head != nullptr) {
@@ -88,7 +87,7 @@ public:
 	bool isEmpty() {
 		return get_size() == 0;
 	}
-
+	
 	ostream& operator<<(ostream& os) {
 		Node* cur_Node = head;
 		os << '{';
@@ -105,7 +104,25 @@ public:
 	Queue& operator=(Queue&) = delete;
 
 	//Brings back Move via construction and move via assignment
-	Queue(Queue&&) = default;
-	Queue& operator=(Queue&&) = default;
-
+	//Move constructor: since a constructor is being used, the queue variable would
+	//be initially empty so moving is straight forward
+	Queue(Queue&& other) noexcept {
+		Node* cur_Node = head;
+		while (!other.isEmpty()) {
+			this->enqueue(other.dequeue());
+		}
+	}
+	//Move assignment: since the queue existed before this is called, it may contain
+	//nodes from previous use, so need to get rid of the old nodes and then add the
+	//new nodes
+	Queue& operator=(Queue&& other) noexcept {
+		while (!this->isEmpty()) {
+			this->dequeue();
+		}
+		Node* cur_Node = head;
+		while (!other.isEmpty()) {
+			this->enqueue(other.dequeue());
+		}
+		return *this;
+	}
 };

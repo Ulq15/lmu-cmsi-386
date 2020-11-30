@@ -102,7 +102,7 @@ int main() {
     test_empty_queue_has_zero_size();
     test_some_insertions_and_deletions();
     test_dequeue_from_empty_queue_throws_underflow_error();
-    //test_no_copies();
-    //test_moves();
+    test_no_copies();
+    test_moves();
     cout << "All tests passed\n";
 }
