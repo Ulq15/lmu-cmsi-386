@@ -42,11 +42,13 @@ private:
 		Node* next;
 		Node(T data, Node* next) :data(data), next(next) {}
 	};
+
 	Node* head;
 	Node* tail;
-	int cur_size;
+	int cur_size = 0;
 public:
 	Queue() : head(nullptr), tail(nullptr) {}
+
 	~Queue() {
 		while (head != nullptr) {
 			Node* prevHead = head;
@@ -54,6 +56,7 @@ public:
 			delete prevHead;
 		}
 	}
+
 	void enqueue(T item) {
 		if (isEmpty()) {
 			head = new Node(item, head);
@@ -65,6 +68,7 @@ public:
 		}
 		cur_size++;
 	}
+
 	T dequeue() {
 		if (isEmpty()) {
 			throw underflow_error("Cannot dequeue an empty Queue");
@@ -76,12 +80,15 @@ public:
 		cur_size--;
 		return dequeued_data;
 	}
+
 	int get_size() {
 		return this->cur_size;
 	}
+
 	bool isEmpty() {
 		return get_size() == 0;
 	}
+
 	ostream& operator<<(ostream& os) {
 		Node* cur_Node = head;
 		os << '{';
@@ -92,5 +99,13 @@ public:
 		os << cur_Node->data << '}';
 		return os;
 	}
-};
 
+	//Destroys Copy Construction and Copy Assignment
+	Queue(Queue&) = delete;
+	Queue& operator=(Queue&) = delete;
+
+	//Brings back Move via construction and move via assignment
+	Queue(Queue&&) = default;
+	Queue& operator=(Queue&&) = default;
+
+};
