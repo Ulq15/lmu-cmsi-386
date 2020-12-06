@@ -12,10 +12,10 @@
  "std::cout << &A[3][7];"  
   we get the address of A[3][7] to be **0x6012A0**
  2. * C++  
-    i. double \*a[n];  
-    ii. double (\*b)[n];  
-    iii. double (\*c())[n];  
-    iv. double (\*d[n])();  
+    i. double \*a[n];  (a is a pointer to an array of n doubles)  
+    ii. double (\*b)[n];  (b is a pointer to an array of n doubles)  
+    iii. double (\*c())[n];  (c is a function taking unspecified number of arguments and returning a pointer to an array of n doubles)  
+    iv. double (\*d[n])();  (d is an array of n pointers to functions taking unspecified number of arguments and returning double)  
     v. double (\*f(int (\*)(int, int[]), int)) (int, ...);  
     * Go  
     i. a \*[n]float64  
