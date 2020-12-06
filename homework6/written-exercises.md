@@ -18,8 +18,8 @@
     iv. double (\*d[n])();  
     v. double (\*f(int (\*)(int, int[]), int)) (int, ...);  
     * Go  
-    i.   
-    ii.   
-    iii.   
-    iv.   
+    i. a \*[n]float64  
+    ii. b \*[n]float64  
+    iii. c func() \*[n]float64  
+    iv. d [n]\*func() float64  
     v.   
