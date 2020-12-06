@@ -12,4 +12,8 @@
  "std::cout << &A[3][7];"  
   we get the address of A[3][7] to be **0x6012A0**
  2. * double \*a[n];  
+    * double (\*b)[n];  
+    * double (\*c())[n];  
+    * double (\*d[n])();  
+    * double (\*f(int (\*)(int, int[]), int)) (int, ...);  
  
