@@ -17,7 +17,7 @@
     iii. double (\*c())[n];  (c is a function taking unspecified number of arguments and returning a pointer to an array of n doubles)  
     iv. double (\*d[n])();  (d is an array of n pointers to functions taking unspecified number of arguments and returning double)  
     v. double (\*f(int (\*)(int, int[]), int)) (int, ...);  
-    * Go  
+    * Go (doesnt have doubles so I chose float64)  
     i. a \*[n]float64  
     ii. b \*[n]float64  
     iii. c func() \*[n]float64  
