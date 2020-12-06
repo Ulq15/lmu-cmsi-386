@@ -22,4 +22,4 @@
     ii. b \*[n]float64  
     iii. c func() \*[n]float64  
     iv. d [n]\*func() float64  
-    v.   
+    v. f func(func(int, []int) int, int) \*func(int, ...) float64  
