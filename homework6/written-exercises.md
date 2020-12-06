@@ -16,7 +16,8 @@
     ii. double (\*b)[n];  (b is a pointer to an array of n doubles)  
     iii. double (\*c())[n];  (c is a function taking unspecified number of arguments and returning a pointer to an array of n doubles)  
     iv. double (\*d[n])();  (d is an array of n pointers to functions taking unspecified number of arguments and returning double)  
-    v. double (\*f(int (\*)(int, int[]), int)) (int, ...);  f is a function that takes:  
+    v. double (\*f(int (\*)(int, int[]), int)) (int, ...);  
+    f is a function that takes:  
     (1) a function that takes an int and an array of int which returns an int and  
     (2) an int  
     and returns a pointer to a function that takes an int and an unspecefied number of other parameters and returns a double.  
