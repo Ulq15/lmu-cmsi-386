@@ -8,6 +8,7 @@
  = 0x601190h + 272d (now to convert the decimal 272 to hexadecimal)
  = 0x601190h + 110h
  = 0x6012A0h which is the Address of A[3][7] and by running  
- "std::cout << &A[3][7];" we get the address of A[3][7] to be 0x6012A0
+ "std::cout << &A[3][7];"  
+  we get the address of A[3][7] to be 0x6012A0
  2.   
   ToDo
