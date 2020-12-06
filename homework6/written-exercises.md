@@ -11,10 +11,15 @@
  = **0x6012A0**h which is the Address of A[3][7] and by running  
  "std::cout << &A[3][7];"  
   we get the address of A[3][7] to be **0x6012A0**
- 2. * C++
+ 2. * C++  
     i. double \*a[n];  
     ii. double (\*b)[n];  
     iii. double (\*c())[n];  
     iv. double (\*d[n])();  
     v. double (\*f(int (\*)(int, int[]), int)) (int, ...);  
- 
+    * Go  
+    i.   
+    ii.   
+    iii.   
+    iv.   
+    v.   
