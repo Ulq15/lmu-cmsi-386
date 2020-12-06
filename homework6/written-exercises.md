@@ -4,8 +4,8 @@
  Address of A[i][j] would be the:  
  base_address + "size of struct" * (i * c + j) (the size of struct is 8 bytes, 4 for the int and 4 for the char)  
  so for A[3][7], i=3, j=7, c=9 (for the # of elements in each row):  
- = 0x601190h + (8*(3 * 9 + 7))d  
- = 0x601190h + (8*(34))d  
+ = 0x601190h + (8 * (3 * 9 + 7))d  
+ = 0x601190h + (8 * (34))d  
  = 0x601190h + 272d (now to convert the decimal 272 to hexadecimal)  
  = 0x601190h + 110h  
  = **0x6012A0**h which is the Address of A[3][7] and by running  
