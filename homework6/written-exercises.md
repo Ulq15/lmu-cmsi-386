@@ -1,7 +1,6 @@
 1. 
   * &A[0][0] = **0x601190**   
  Address is **0x601190**, A[0][0] is the base_address of the 2d Array in hexadecimal.  
-
   * &A[3][7] = **0x6012A0**  
  Address of A[3][7] would be the:  
  base_address + "size of struct" * (3 * 9 + 7) (the size of struct is 8 bytes, 4 for the int and 4 for the char)  
