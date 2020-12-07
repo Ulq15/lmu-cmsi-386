@@ -11,7 +11,7 @@
  = **0x6012A0**h which is the Address of A[3][7] and by running  
  "std::cout << &A[3][7];"  
   we get the address of A[3][7] to be **0x6012A0**
- 2. * C++  
+2. * C++  
     i. double \*a[n];  (a is a pointer to an array of n doubles)  
     ii. double (\*b)[n];  (b is a pointer to an array of n doubles)  
     iii. double (\*c())[n];  (c is a function taking unspecified number of arguments and returning a pointer to an array of n doubles)  
@@ -26,4 +26,5 @@
     ii. b \*[n]float64  
     iii. c func() \*[n]float64  
     iv. d [n]\*func() float64  
-    v. f func(func(int, []int) int, int) \*func(int, ...) float64  
+    v. f func(func(int, []int) int, int) \*func(int, ...) float64
+3.   
