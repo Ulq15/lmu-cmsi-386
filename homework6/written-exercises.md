@@ -33,8 +33,8 @@
         => 1 * 3 - 1 = **2**
 4.  * a) output with   _deep_  binding: **8**
     * b) output with _shallow_ binding: **5**
-5.  * a) by value: 
-    * b) by reference: 
-    * c) by value-result: 
-    * d) by name: 
+5.  * a) by _value_: 
+    * b) by _reference_: 
+    * c) by _value-result_: 
+    * d) by _name_: 
 6.  *
