@@ -27,5 +27,5 @@
     iii. c func() \*[n]float64  
     iv. d [n]\*func() float64  
     v. f func(func(int, []int) int, int) \*func(int, ...) float64
-3. a. 
+3. a.   
    b.   
