@@ -29,4 +29,5 @@
     v. f func(func(int, []int) int, int) \*func(int, ...) float64
 3.  * a) f() * h() - x => 1 * 1 - 1 = **0**  
     * b) f() * h() - x => 1 * 3 - 1 = **2**
-4.  *  
+4.  * a) **8**
+    * b) **5**  
