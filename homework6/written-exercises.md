@@ -27,9 +27,9 @@
     iii. c func() \*[n]float64  
     iv. d [n]\*func() float64  
     v. f func(func(int, []int) int, int) \*func(int, ...) float64
-3.  * a) f() * h() - x  
+3.  * a) f() * h() - x with static scope rules  
         => 1 * 1 - 1 = **0**  
-    * b) f() * h() - x  
+    * b) f() * h() - x with dynamic scope rules  
         => 1 * 3 - 1 = **2**
 4.  * a) output with   _deep_  binding: **8**
     * b) output with _shallow_ binding: **5**  
