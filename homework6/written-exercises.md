@@ -32,4 +32,9 @@
     * b) f() * h() - x with dynamic scope rules  
         => 1 * 3 - 1 = **2**
 4.  * a) output with   _deep_  binding: **8**
-    * b) output with _shallow_ binding: **5**  
+    * b) output with _shallow_ binding: **5**
+5.  * a) 
+    * b) 
+    * c) 
+    * d) 
+6.  *
