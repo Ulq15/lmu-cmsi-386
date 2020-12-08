@@ -37,7 +37,7 @@
     * b) by _reference_: **2 2 3 4**
     * c) by _value-result_: **2 2 2 4**
     * d) by _name_: **2 2 3 4**
-6. ```js
+6. ```javascript
    let isPrime = (n) => {  
     return new Promise((resolve, reject) => {  
       if (isNaN(n) || !Number.isInteger(n)){  
