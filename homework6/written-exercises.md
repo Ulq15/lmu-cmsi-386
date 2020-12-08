@@ -62,7 +62,7 @@
    };
    ```
 7.  
-8. ```go
+8. ```Go
 func main() {
   ch := make(chan float64)
   go powers(2, 64, ch)
