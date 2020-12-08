@@ -63,20 +63,20 @@
    ```
 7.  
 8. ```go
- func main() {  
-  ch := make(chan float64)  
-  go powers(2, 64, ch)  
-  for i := range ch {  
-    fmt.Println(i)  
-  }  
-}  
+   func main() {  
+     ch := make(chan float64)  
+     go powers(2, 64, ch)  
+     for i := range ch {  
+       fmt.Println(i)  
+     }  
+   }  
 
-func powers(base float64, limit float64, ch chan float64) {  
-  i := float64(0)  
-  for math.Pow(base, i) <= limit{  
-    ch <-math.Pow(base, i)  
-    i++  
-  }  
-  close(ch)  
-}  
-```
+   func powers(base float64, limit float64, ch chan float64) {  
+     i := float64(0)  
+     for math.Pow(base, i) <= limit{  
+       ch <-math.Pow(base, i)  
+       i++  
+     }  
+     close(ch)  
+   }  
+   ```
