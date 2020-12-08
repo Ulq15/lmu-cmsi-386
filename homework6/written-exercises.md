@@ -39,24 +39,24 @@
     * d) by _name_: **2 2 3 4**
 6.  
    let isPrime = (n) => {  
-    return new Promise((resolve, reject) => {
-    if (isNaN(n) || !Number.isInteger(n)){
-      reject({n, error: "Not an integer"})
-    }
-    else if (n<2 || n>Number.MAX_SAFE_INTEGER){
-      reject({n, error: "Number too big or too small"})
-    }
-    else if(n === 2 || n === 3){
-      resolve(true)
-    }
-    else if(n%2 === 0 || n%3 === 0){
-      resolve(false)
-    }
-    for( let k = 5, w = 2; k*k <=n; k+=w,w=6-w){
-      if(n%k === 0){
-        resolve(false)
-      }
-    }
-    resolve(true)
-  }).then(result=>{return result}, failure=>{return failure.error})
-};
+    return new Promise((resolve, reject) => {  
+    if (isNaN(n) || !Number.isInteger(n)){  
+      reject({n, error: "Not an integer"})  
+    }  
+    else if (n<2 || n>Number.MAX_SAFE_INTEGER){  
+      reject({n, error: "Number too big or too small"})  
+    }  
+    else if(n === 2 || n === 3){  
+      resolve(true)  
+    }  
+    else if(n%2 === 0 || n%3 === 0){  
+      resolve(false)  
+    }  
+    for( let k = 5, w = 2; k*k <=n; k+=w,w=6-w){  
+      if(n%k === 0){  
+        resolve(false)  
+      }  
+    }  
+    resolve(true)  
+  }).then(result=>{return result}, failure=>{return failure.error})  
+};  
