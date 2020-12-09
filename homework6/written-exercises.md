@@ -61,7 +61,7 @@
     }).then(result=>{ return result}, failure=>{return failure.error})  
    };
    ```
-7.  
+7. The “billion dollar mistake”, which is the creation of the null reference, applies only to statically typed languages (meaning type checking is done at compile time not run time), it has nothing to do with Python and other dynamically typed languages (type checking is done at run time) because with dynamically typed languages all references have the top type ⊤, the supertype of all types, which can and does reference any value. The type restrictions are not on the references but the values to which the references point. Python does not care if "var x" is an integer, string, etc, because x is a reference to a value and not the value itself. So the billion dollar mistake doesn't apply to Python.  
 8. ```go
    func main() {  
      ch := make(chan float64)  
